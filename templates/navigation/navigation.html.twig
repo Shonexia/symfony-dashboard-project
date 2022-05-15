@@ -1,0 +1,24 @@
+{% set route = app.request.get('_route') %}
+{% set admin = is_granted('ROLE_ADMIN') %}
+{% set developer = is_granted('ROLE_DEVELOPER') %}
+
+
+<html>
+	<head>
+		<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+	</head>
+	<body>
+		<nav class="side-nav">
+			<img src='/img/universal-logo.png' alt="logo" class='nav-logo'/>
+			{% if is_granted('ROLE_ADMIN') %}
+				<a class="nav-item" href="{{ path('developers-all-developers') }}">DEVELOPERS</a>
+				<a class="nav-item" href="{{ path('clients-all-clients') }}">CLIENTS</a>
+				<a class="nav-item" href="{{ path('dashboard-admin-profile') }}">MY PROFILE</a>
+				<a class="nav-item" href="{{ path('dashboard-logout') }}">LOGOUT</a>
+			{% elseif is_granted('ROLE_DEVELOPER') %}
+				<a class="nav-item" href="{{ path('developers-developer-profile') }}">MY PROFILE</a>
+				<a class="nav-item" href="{{ path('dashboard-logout') }}">LOGOUT</a>
+			{% endif %}
+		</body>
+	</body>
+</html></div></div></nav></body></html>

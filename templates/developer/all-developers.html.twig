@@ -1,0 +1,48 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+		<title>Developers</title>
+	</head>
+	<body>
+		{% include ('/navigation/navigation.html.twig') %}
+		<section class="devs-section">
+			<div class="table-container overflow-auto-x">
+				<table>
+					<div class="search-add">
+						<img src="/img/search-icon.png" alt="" class="search-icon">
+						<input type="text" placeholder="Search" class="search-field">
+					</div>
+					<thead>
+						<th>Avatar</th>
+						<th>First name</th>
+						<th>Last name</th>
+						<th class="opt">Options</th>
+					</thead>
+					<tbody>
+						{% for developer in developers %}
+							<tr>
+								<td>Developer picture</td>
+								<td>{{ developer.firstname }}</td>
+								<td>{{ developer.lastname }}</td>
+								<td>
+									<div class="options">
+										<a class="edit-user-btn"><img src="/img/edit1.png" alt=""></a>
+										<a id="myBtn"><img src="/img/eye.png" alt="" class="eye-pad"></a>
+										<!-- <button id="myBtn">Open Modal</button> -->
+									</div>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td>not found</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,221 @@
+/* body {
+    background: yellowgreen;
+} */
+
+
+.overflow-auto-x {
+    overflow-x: auto;
+  }
+  
+  .devs-section {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+  
+  .clients-section {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .search-add {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    padding: 16px 0;
+    font-size: 22px;
+  }
+  
+  .search-icon {
+    display: grid;
+    align-self: center;
+    padding: 0 20px 0 60px;
+  }
+  
+  .search-field {
+    display: grid;
+    background-color: white;
+    width: 600px;
+    padding: 25px 0 25px 0;
+    border: 0 solid white;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .add-user-btn {
+    display: grid;
+    justify-self: right;
+    align-self: center;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+    border: 0 solid;
+    border-radius: 4px;
+    width: 200px;
+    padding: 9px;
+    margin-right: 60px;
+    font-size: 16px;
+  }
+
+  .add-client-btn {
+    display: grid;
+    justify-self: right;
+    align-self: center;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+    border: 0 solid;
+    border-radius: 4px;
+    width: 200px;
+    padding: 9px;
+    margin-right: 60px;
+    font-size: 16px;
+  }
+  
+  .table-container {
+    display: grid;
+    text-align: left;
+    font-size: 16px;
+    line-height: 19px;
+    border: 0.4px solid #c5c5c5;
+    border-radius: 10px;
+    margin: 30px 30px 30px 230px;
+    background: #ffffff;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  table {
+    width: 100%;
+    min-width: 1000px;
+    overflow-x: scroll;
+    border-collapse: collapse;
+    padding: 20px 20px;
+  }
+  
+  th {
+    padding: 30px 0 30px 30px;
+  }
+  
+  td {
+    padding: 10px 0 10px 30px;
+  }
+  
+  th,
+  td {
+    border: 0.4px solid #c5c5c5;
+  }
+  
+  th:first-of-type,
+  td:first-of-type {
+    border-left: none;
+    width: 150px;
+  }
+  
+  th:last-of-type,
+  td:last-of-type {
+    border-right: none;
+  }
+  
+  td:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+  }
+  
+  td:first-child img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .options {
+    display: flex;
+  }
+  
+  .options img {
+    width: 20px;
+    margin: 0 10px;
+    object-fit: contain;
+  }
+  
+  .eye-pad {
+    margin: 0 25px;
+  }
+  
+  .options img:hover {
+    cursor: pointer;
+  }
+
+  /*///////////// ADD NEW CLIENT //////////////*/
+
+  .new-client {
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    display: grid;
+    right: -100%;
+    width: 480px;
+    height: 1000px;
+    padding: 60px 60px 40px 60px;
+    box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px 0px 0px 20px;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .new-client.active {
+    right: 0;
+    position: fixed;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .add-img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 11px auto;
+    cursor: pointer;
+  }
+  
+  .new-client input[type="text"] {
+    width: 360px;
+    padding: 3px 0 0 20px;
+    margin: 11px 0;
+  }
+  
+  .text-area {
+    margin-top: 12px;
+    width: 360px;
+    height: 160px;
+  }
+  
+  .btn-options {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-top: 49px;
+  }
+  
+  .new-cancel-btn,
+  .edit-cancel-btn {
+    border: 0 solid;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .edit-save-changes,
+  .confirm-addclient-btn {
+    justify-self: right;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+    border: 0 solid;
+    border-radius: 4px;
+    width: 200px;
+    padding: 9px;
+  }
+
+    /*///////////// ADD NEW CLIENT //////////////*/

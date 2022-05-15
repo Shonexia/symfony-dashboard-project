@@ -1,0 +1,91 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+		<title>Clients</title>
+	</head>
+	<body>
+		{% include ('/navigation/navigation.html.twig') %}
+		<section class="clients-section">
+			<div class="table-container overflow-auto-x">
+				<table>
+					<div class="search-add">
+						<img src="/img/search-icon.png" alt="" class="search-icon">
+						<input type="text" placeholder="Search" class="search-field">
+						<input type="button" value="Add Client" class="add-client-btn">
+						<a {# href="{{ path('clients-add-client')}}" #}></a>
+					</div>
+					<thead>
+						<th>Avatar</th>
+						<th>Client name</th>
+						<th class="opt">Options</th>
+					</thead>
+					<tbody>
+						{% for client in clients %}
+							<tr>
+								<td>
+									{# <img src="/img/it-convergence.png" alt=""> #}
+									{# {{ client.avatarpath }} #}
+								Client picture
+								</td>
+									<td>
+								{{ client.clientname }}
+								</td>
+									<td>
+										<div class="options"> <img src="/img/edit1.png" alt="">
+										<img src="/img/delete1.png" alt="">
+									</div>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td>not found</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			{# ///////////////////////////////////// #}
+			<!-- ADD NEW CLIENT -->
+			<div class="new-client">
+				<form action="" class="new-user-info">
+					<h1>New Client</h1>
+					<div class="add-img">
+						<img src="/img/add-image.png" alt="">
+					</div>
+					<input type="text" placeholder="Avatar Name:">
+					<input type="text" placeholder="Client Name:">
+					<input type="text" placeholder="Email:">
+					<div class="btn-options">
+						<button type="button" class="new-cancel-btn">Cancel</button>
+						<button class="confirm-addclient-btn">Add Client</button>
+					</div>
+				</form>
+				{# {{ form(form) }} #}
+			</div>
+			<!-- // ADD NEW CLIENT -->
+		{# ADD CLIENT TWIG FORM #}
+			{# {{ form_start(form) }}
+						{{ form_row(form.avatarPath) }}
+						{{ form_row(form.clientName) }}
+						{{ form_row(form.Email) }}
+						<button type="submit" class="btn btn-primary w-50">ADD CLIENT</button>
+						{{ form_end(form) }} #}
+			{# ADD CLIENT TWIG FORM #}
+		</section>
+		<script>
+			// BUTTONS
+const addUser = document.querySelector(".add-client-btn");
+const newUser = document.querySelector(".new-client");
+const cancelUser = document.querySelector(".new-cancel-btn");
+addUser.addEventListener("click", showNewUser);
+cancelUser.addEventListener("click", showNewUser);
+function showNewUser() {
+newUser.classList.toggle("active");
+};
+// BUTTONS
+		</script>
+	</body>
+</html></body></html>

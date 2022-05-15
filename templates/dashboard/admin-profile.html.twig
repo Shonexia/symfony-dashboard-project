@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('css/myprofile.css') }}">
+		<title></title>
+	</head>
+	<body>
+		{% include ('/navigation/navigation.html.twig') %}
+		<section
+			class="profile-section">
+			<!-- PAGE CONTAINER -->
+			<div
+				class="page-container overflow-auto-x">
+				<!-- PROFILE CONTAINER -->
+				<div class="profile-view">
+					<div class="img-title">
+						<a class="edit-user-btn"><img src="/img/edit1.png" alt="" class="edit-right"></a>
+
+						<div class="user-img">
+							<img src="/img/profile-img.png" alt="" class="profile-img">
+						</div>
+						<h1>{{ app.user.firstName }}
+							{{ app.user.lastName }}</h1>
+					</div>
+					<div class="profile-items">
+						<span>
+							<strong>First Name:</strong>
+							{{ app.user.firstName }}</span>
+						<span>
+							<strong>Last Name:</strong>
+							{{ app.user.lastName }}</span>
+						<span>
+							<strong>Email:</strong>
+							{{ app.user.email }}</span>
+						<span>
+							<strong>Role:</strong>
+							Developer static</span>
+						<span>
+							<strong>Table ID:</strong>
+							{{ app.user.id }}</span>
+						<span>
+							<strong>Status:</strong>
+							Active static</span>
+					</div>
+					<div class="btn-options">
+						<button type="button" class="insert-hours-btn">Insert hours</button>
+						<b>This month: 120:16:45</b>
+					</div>
+				</div>
+			</div>
+			<!-- EDIT USER -->
+			<div class="edit-user">
+				<form action="" class="edit-user-info">
+					<div class="delete-user-icon">
+						Delete user
+						<img src="/img/delete1.png" alt="">
+					</div>
+					<h2>Loreta Ipsum</h2>
+					<div class="delete-user-img">
+						<img src="/img/profile-img1.png" alt="">
+					</div>
+					<div class="delete-profile-items">
+						<input type="text" placeholder="Loreta">
+						<input type="text" placeholder="Ipsum">
+						<input type="text" placeholder="loriipsum@gmail.com">
+						<input type="text" placeholder="069xxxxxxx">
+						<input type="text" placeholder="Adolfa Singera 12A">
+						<input type="text" placeholder="Subotica">
+						<input type="text" placeholder="24000">
+						<input type="text" placeholder="Serbia">
+						<input type="text" placeholder="********">
+						<input type="text" placeholder="Developer">
+						<input type="text" placeholder="Tekuci Racun:">
+					</div>
+					<div class="edit-btn-options">
+						<button type="button" class="edit-cancel-btn">Cancel</button>
+						<button type="button" class="edit-save-changes">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</body>
+	</body>
+</html>

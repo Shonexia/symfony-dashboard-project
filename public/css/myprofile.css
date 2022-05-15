@@ -1,0 +1,300 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.618;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  @font-face {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: url("../fonts/OpenSans-Regular.ttf");
+    src: local(""), url("../fonts/OpenSans-Bold.ttf") format("ttf"),
+      url("../fonts/OpenSans-Medium.ttf") format("ttf"),
+      url("../fonts/OpenSans-Light.ttf") format("ttf");
+  }
+  
+  .overflow-auto-x {
+    overflow-x: auto;
+  }
+  
+  .profile-section {
+    display: grid;
+    position: relative;
+    /* grid-template-rows: auto auto; */
+  }
+  
+  .side-nav {
+    display: grid;
+  }
+  
+  .page-container {
+    min-width: 1500px;
+    height: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 16px;
+    line-height: 19px;
+    border: 0.4px solid #c5c5c5;
+    border-radius: 10px;
+    margin: 30px 30px 30px 230px;
+    background: #ffffff;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .profile-view {
+    display: grid;
+    width: 400px;
+    margin: 60px 0;
+    border-right: 1px solid #bababa;
+    justify-content: center;
+  }
+  
+  .edit-right {
+    display: grid;
+    margin-left: auto;
+    margin: 0 0 25px auto;
+    cursor: pointer;
+  }
+  
+  .profile-img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 30px;
+    margin: 20px 0 15px 0;
+    white-space: pre-line;
+    text-align: center;
+    line-height: 1.2;
+  }
+  
+  .profile-items {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .btn-options {
+    display: grid;
+    gap: 20px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .insert-hours-btn {
+    display: grid;
+    cursor: pointer;
+    background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+    color: white;
+    align-self: center;
+    border: 0 solid;
+    border-radius: 4px;
+    width: 240px;
+    padding: 9px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  
+  .log-out-btn {
+    display: grid;
+    cursor: pointer;
+    background: white;
+    color: #1138c2;
+    align-self: center;
+    border: 1px solid #1138c2;
+    border-radius: 4px;
+    width: 240px;
+    padding: 9px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  
+  /*///////// TABLE //////////*/
+  
+  .table-container {
+    padding: 60px 60px 41px 60px;
+  }
+  
+  table {
+    display: grid;
+    width: 100%;
+    min-width: 940px;
+    height: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  
+  th:first-of-type {
+    border-left: none;
+    border-top: none;
+    border-radius: 20px 0px 0px 0px;
+  }
+  
+  th:last-of-type {
+    border-right: none;
+    border-top: none;
+    border-radius: 0px 20px 0px 0px;
+  }
+  
+  tr:not(tr:first-of-type) {
+    border-left: none;
+    border-right: none;
+  }
+  
+  th {
+    border: none;
+  }
+  
+  tr:nth-child(even) td {
+    background-color: rgba(96, 96, 96, 0.05);
+  }
+  
+  tr:nth-child(odd) td {
+    background-color: rgba(96, 96, 96, 0.01);
+  }
+  
+  th {
+    background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+    color: white;
+    padding: 17px 0;
+  }
+  
+  td {
+    border: 0.4px solid white;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  td:last-of-type {
+    padding: 0 50px;
+  }
+  
+  .dot {
+    height: 5px;
+    width: 5px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .opt:hover {
+    cursor: pointer;
+  }
+  
+  /*///////////// EDIT USER //////////////*/
+  
+  .edit-user {
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    display: grid;
+    right: -100%;
+    /* right: 0; */
+    width: 480px;
+    height: 1000px;
+    padding: 30px 60px 40px 60px;
+    box-shadow: -2px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px 0px 0px 20px;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .edit-user.active {
+    right: -100%;
+    position: fixed;
+  }
+  
+  .edit-user-info {
+    display: grid;
+    text-align: left;
+  }
+  
+  .delete-user-icon {
+    display: grid;
+    justify-content: end;
+    grid-template-columns: auto auto;
+    margin-bottom: 10px;
+  }
+  
+  .delete-user-icon img {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  h2 {
+    margin: 0;
+    /* margin-bottom: 40px; */
+  }
+  
+  .delete-user-img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 28px;
+  }
+  
+  .delete-profile-items {
+    display: grid;
+    gap: 22px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .edit-user input[type="text"] {
+    width: 360px;
+    padding: 3px 0 0 20px;
+  }
+  
+  .edit-btn-options {
+    display: grid;
+    align-items: end;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .edit-cancel-btn {
+    border: 0 solid;
+    background-color: white;
+    cursor: pointer;
+    padding: 11px 30px;
+  }
+  
+  .edit-save-changes {
+    justify-self: right;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+    border: 0 solid;
+    border-radius: 4px;
+    width: 200px;
+    padding: 11px 0;
+  }
+  
