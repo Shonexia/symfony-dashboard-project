@@ -3,7 +3,9 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+		<link
+		rel="stylesheet" href="{{ asset('css/styles.css') }}">
+		{# <script src="{{ asset('js/script.js') }}"></script> #}
 		<title>Clients</title>
 	</head>
 	<body>
@@ -13,9 +15,11 @@
 				<table>
 					<div class="search-add">
 						<img src="/img/search-icon.png" alt="" class="search-icon">
-						<input type="text" placeholder="Search" class="search-field">
+						<input
+						type="text" placeholder="Search" class="search-field">
+						{# <a href="{{ path('clients-all-clients')}}"></a> #}
 						<input type="button" value="Add Client" class="add-client-btn">
-						<a {# href="{{ path('clients-add-client')}}" #}></a>
+
 					</div>
 					<thead>
 						<th>Avatar</th>
@@ -50,30 +54,25 @@
 			{# ///////////////////////////////////// #}
 			<!-- ADD NEW CLIENT -->
 			<div class="new-client">
-				<form action="" class="new-user-info">
+				<divclass="new-user-info">
 					<h1>New Client</h1>
 					<div class="add-img">
 						<img src="/img/add-image.png" alt="">
 					</div>
-					<input type="text" placeholder="Avatar Name:">
-					<input type="text" placeholder="Client Name:">
-					<input type="text" placeholder="Email:">
+					{{ form_start(form) }}
+					Add Image:
+					{{ form_widget(form.avatarPath , { 'attr': {'class': 'new-client-input'}}) }}
+															Client Name:
+					{{ form_widget(form.clientName , { 'attr': {'class': 'new-client-input'}}) }}
+															Client Email:
+					{{ form_widget(form.clientEmail , { 'attr': {'class': 'new-client-input'}}) }}
 					<div class="btn-options">
 						<button type="button" class="new-cancel-btn">Cancel</button>
-						<button class="confirm-addclient-btn">Add Client</button>
+						{{ form_widget(form.save, { 'attr': {'class': 'confirm-addclient-btn'}}) }}
 					</div>
-				</form>
-				{# {{ form(form) }} #}
+					{{ form_end(form) }}
+				</div>
 			</div>
-			<!-- // ADD NEW CLIENT -->
-		{# ADD CLIENT TWIG FORM #}
-			{# {{ form_start(form) }}
-						{{ form_row(form.avatarPath) }}
-						{{ form_row(form.clientName) }}
-						{{ form_row(form.Email) }}
-						<button type="submit" class="btn btn-primary w-50">ADD CLIENT</button>
-						{{ form_end(form) }} #}
-			{# ADD CLIENT TWIG FORM #}
 		</section>
 		<script>
 			// BUTTONS
@@ -88,4 +87,4 @@ newUser.classList.toggle("active");
 // BUTTONS
 		</script>
 	</body>
-</html></body></html>
+</html></body></html></body></body></html>

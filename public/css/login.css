@@ -1,0 +1,148 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.618;
+  color: black;
+  background-color: white;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url("../fonts/OpenSans-Regular.ttf");
+  src: local(""), url("../fonts/OpenSans-Bold.ttf") format("ttf"),
+    url("../fonts/OpenSans-Medium.ttf") format("ttf"),
+    url("../fonts/OpenSans-Light.ttf") format("ttf");
+}
+
+.back-image {
+  background-image: url(../img/blue-background.png);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.login-section {
+  position: relative;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  width: 650px;
+  /* height: 650px; */
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  margin-top: 125px;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* .uni-logo {
+  background-image: url(../img/universal-logo.png);
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
+
+.universal-logo {
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 40px 0;
+}
+
+.form-container {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  margin: 0 auto;
+  /* row-gap: 30px; */
+  width: 450px;
+}
+
+span {
+  display: block;
+}
+
+span.log {
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 19px;
+  margin-bottom: 70px;
+}
+
+.btn {
+  color: white;
+  background: linear-gradient(180deg, #3372ed 0%, #1138c2 100%);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: 120px;
+}
+
+input[type="email"], input[type="password"] {
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: white;
+}
+
+input {
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.input {
+  color: black;
+  padding: 10px;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.hidden-eye {
+  position: relative;
+  left: 415px;
+  bottom: 60px;
+}

@@ -21,4 +21,10 @@
 			{% endif %}
 		</body>
 	</body>
-</html></div></div></nav></body></html>
+</html></div></div></nav></body></html>{# {% if is_granted('ROLE_ADMIN') %}
+											<a class="nav-item" href="{{ path('developers-all-developers') }}">DEVELOPERS</a>
+											<a class="nav-item" href="{{ path('clients-all-clients') }}">CLIENTS</a>
+										{% elseif is_granted('ROLE_DEVELOPER') %}
+											<a class="nav-item" href="{{ path('dashboard-my-profile') }}">MY PROFILE</a>
+											<a class="nav-item" href="{{ path('dashboard-logout') }}">LOGOUT</a>
+										{% endif %} #}

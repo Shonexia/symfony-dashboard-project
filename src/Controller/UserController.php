@@ -19,28 +19,28 @@ use Symfony\Component\Routing\Annotation\Route;
 class UserController extends AbstractController
 {
 
-    // DISPLAY ALL DEVELOPERS
-    #[Route('/all-clients', name: 'all-clients')]
-    #[IsGranted('ROLE_ADMIN')]
-    public function allClients(ClientRepository $cr)
-    {
-        $clients = $cr->findAll();
-        return $this->render('client/all-clients.html.twig', ['clients' => $clients]);
-    }
+    // // DISPLAY ALL DEVELOPERS
+    // #[Route('/all-clients', name: 'all-clients')]
+    // #[IsGranted('ROLE_ADMIN')]
+    // public function allClients(ClientRepository $cr)
+    // {
+    //     $clients = $cr->findAll();
+    //     return $this->render('client/all-clients.html.twig', ['clients' => $clients]);
+    // }
 
-    // ADD CLIENT
-    #[Route('/add-client', name: 'add-client')]
-    public function addClient(ClientRepository $cr, Request $request)
-    {
-        $client = new Client();
-        $form = $this->createForm(ClientType::class, $client);
+    // // ADD CLIENT
+    // #[Route('/add-client', name: 'add-client')]
+    // public function addClient(ClientRepository $cr, Request $request)
+    // {
+    //     $client = new Client();
+    //     $form = $this->createForm(ClientType::class, $client);
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $client = $form->getData();
-            $cr->add($client);
-            return $this->redirectToRoute('clients-all-clients');
-        }
-        return $this->render('client/all-clients.html.twig', ['form' => $form->createView()]);
-    }
+    //     $form->handleRequest($request);
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         $client = $form->getData();
+    //         $cr->add($client);
+    //         return $this->redirectToRoute('clients-all-clients');
+    //     }
+    //     return $this->render('client/addclient.html.twig', ['form' => $form->createView()]);
+    // }
 }

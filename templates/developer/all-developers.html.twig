@@ -45,4 +45,27 @@
 			</div>
 		</section>
 	</body>
-</html>
+</html></body></html>{# ///////////////////////////////////////////////////////////////////// #}{# <table class="temporary">
+									<thead>
+										<th>First Name</th>
+										<th>Last Name</th>
+										<th>Options</th>
+									</thead>
+									<tbody>
+										{% for developer in developers %}
+											<tr>
+												<td>{{ developer.firstname }}</td>
+												<td>{{ developer.lastname }}</td>
+												<td>
+													<button>VIEW</button>
+													<button>DELETE</button>
+												</td>
+											</tr>
+										{% else %}
+											<tr>
+												<td>not found</td>
+											</tr>
+										{% endfor %}
+				
+									</tbody>
+								</table> #}</body></html>

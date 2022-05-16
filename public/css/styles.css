@@ -186,6 +186,12 @@
     padding: 3px 0 0 20px;
     margin: 11px 0;
   }
+
+  .new-client-input {
+    width: 360px;
+    padding: 3px 0 0 20px;
+    margin: 11px 0;
+  }
   
   .text-area {
     margin-top: 12px;
