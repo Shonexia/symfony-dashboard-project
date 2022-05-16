@@ -63,15 +63,16 @@ class ClientController extends AbstractController
         $client = $cr->find($id);
 
         $editClientForm = $this->createForm(ClientType::class, $client, [
-            'method' => 'PUT',
+            'method' => 'POST',
             'action' => $this->generateUrl('clients-edit-client', ['id' => $id])
         ]);
 
         $editClientForm->handleRequest($request);
-
-        if ($editClientForm->isSubmitted() && $editClientForm->isValid() && $request->isMethod("PUT")) {
+        // dd($request->getMethod());
+        // dd($editClientForm);
+        if ($editClientForm->isSubmitted() && $editClientForm->isValid()) {
             $editedClient = $editClientForm->getData();
-            dd($editedClient);
+            // dd($editedClient);
             $cr->add($editedClient, true);
 
             return $this->redirectToRoute('clients-all-clients');
@@ -79,6 +80,15 @@ class ClientController extends AbstractController
 
         return $this->render('client/client-profile.html.twig', ['client' => $client, 'editform' => $editClientForm->createView()]);
     }
+
+
+
+
+
+
+
+
+
 
     // DELETE CLIENT
     #[Route('/delete-client/{id}', name: 'delete-client')]

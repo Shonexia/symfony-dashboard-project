@@ -45,11 +45,11 @@ class DashboardController extends AbstractController
 
         if ($this->isGranted('ROLE_ADMIN')) {
             // return $this->render('dashboard/my-profile.html.twig');
-            return $this->redirectToRoute('dashboard-admin-profile');
+            return $this->render('dashboard/admin-profile.html.twig');
 
             //redirect toroute my profile
         } else if ($this->isGranted('ROLE_DEVELOPER')) {
-            return $this->redirectToRoute('developers-developer-profile');
+            return $this->render('developer/developer-profile.html.twig');
         } else
             // return new Response('You are not logged in!');
             return $this->redirectToRoute(('dashboard-logout'));
@@ -58,7 +58,7 @@ class DashboardController extends AbstractController
 
     // DISPLAY MY PROFILE
     //myprofile/{id}
-    #[Route('/my-profile', name: 'my-profile')]
+    #[Route('/myprofile/{id}', name: 'my-profile')]
     public function myProfile()
     {
 
