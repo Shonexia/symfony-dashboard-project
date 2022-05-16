@@ -1,3 +1,4 @@
+{% set admin = is_granted('ROLE_ADMIN') %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,18 +10,9 @@
 	</head>
 	<body>
 		{% include ('/navigation/navigation.html.twig') %}
-
-		{# <h1>Hello</h1>
-								{{ myprofile.firstname }}
-								{{ myprofile.getLastName() }} #}
-		{# <div class="temporary">Hello{{ app.user.email }}! 🍔🍕
-								<br>
-								{{ app.user.firstName }}
-								{{ app.user.lastName }}
-								<br>
-								ovde ispis info-a iz baze po id-u logovanog korisnika</div> #}
-			<section
-			class="profile-section"> <!-- PAGE CONTAINER -->
+		<section
+			class="profile-section">
+			<!-- PAGE CONTAINER -->
 			<div
 				class="page-container overflow-auto-x">
 				<!-- PROFILE CONTAINER -->
@@ -46,7 +38,12 @@
 							{{ app.user.email }}</span>
 						<span>
 							<strong>Role:</strong>
-							Developer static</span>
+							{% if admin %}
+								Admin
+							{% else %}
+								unknown role
+							{% endif %}
+						</span>
 						<span>
 							<strong>Table ID:</strong>
 							{{ app.user.id }}</span>
@@ -54,10 +51,7 @@
 							<strong>Status:</strong>
 							Active static</span>
 					</div>
-					<div class="btn-options">
-						<button type="button" class="insert-hours-btn">Insert hours</button>
-						<b>This month: 120:16:45</b>
-					</div>
+
 				</div>
 			</div>
 			<!-- EDIT USER -->

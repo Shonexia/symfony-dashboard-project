@@ -24,13 +24,15 @@
 					<tbody>
 						{% for developer in developers %}
 							<tr>
-								<td>Developer picture</td>
+								<td><img src="/img/stefan-stevic.jpg" alt=""></td>
 								<td>{{ developer.firstname }}</td>
 								<td>{{ developer.lastname }}</td>
 								<td>
-									<div class="options">
-										<a class="edit-user-btn"><img src="/img/edit1.png" alt=""></a>
+									<div
+										class="options">
+										{# <a class="edit-user-btn"><img src="/img/edit1.png" alt=""></a> #}
 										<a id="myBtn"><img src="/img/eye.png" alt="" class="eye-pad"></a>
+										<a href="{{ path('developers-delete-developer', {'id':developer.id}) }}"><img src="/img/delete1.png" alt=""></a>
 										<!-- <button id="myBtn">Open Modal</button> -->
 									</div>
 								</td>
@@ -45,27 +47,4 @@
 			</div>
 		</section>
 	</body>
-</html></body></html>{# ///////////////////////////////////////////////////////////////////// #}{# <table class="temporary">
-									<thead>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Options</th>
-									</thead>
-									<tbody>
-										{% for developer in developers %}
-											<tr>
-												<td>{{ developer.firstname }}</td>
-												<td>{{ developer.lastname }}</td>
-												<td>
-													<button>VIEW</button>
-													<button>DELETE</button>
-												</td>
-											</tr>
-										{% else %}
-											<tr>
-												<td>not found</td>
-											</tr>
-										{% endfor %}
-				
-									</tbody>
-								</table> #}</body></html>
+</html>

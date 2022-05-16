@@ -1,3 +1,5 @@
+{% set developer = is_granted('ROLE_DEVELOPER') %}
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,18 +11,9 @@
 	</head>
 	<body>
 		{% include ('/navigation/navigation.html.twig') %}
-
-		{# <h1>Hello</h1>
-										{{ myprofile.firstname }}
-										{{ myprofile.getLastName() }} #}
-		{# <div class="temporary">Hello{{ app.user.email }}! 🍔🍕
-										<br>
-										{{ app.user.firstName }}
-										{{ app.user.lastName }}
-										<br>
-										ovde ispis info-a iz baze po id-u logovanog korisnika</div> #}
-			<section
-			class="profile-section"> <!-- PAGE CONTAINER -->
+		<section
+			class="profile-section">
+			<!-- PAGE CONTAINER -->
 			<div
 				class="page-container overflow-auto-x">
 				<!-- PROFILE CONTAINER -->
@@ -46,7 +39,12 @@
 							{{ app.user.email }}</span>
 						<span>
 							<strong>Role:</strong>
-							Developer static</span>
+							{% if developer %}
+								Developer
+							{% else %}
+								unknown role
+							{% endif %}
+						</span>
 						<span>
 							<strong>Table ID:</strong>
 							{{ app.user.id }}</span>

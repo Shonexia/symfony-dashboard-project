@@ -30,16 +30,19 @@
 						{% for client in clients %}
 							<tr>
 								<td>
-									{# <img src="/img/it-convergence.png" alt=""> #}
-									{# {{ client.avatarpath }} #}
-								Client picture
+									<img
+									src="/img/it-convergence.png" alt="">
+								{# {{ client.avatarpath }} #}
+
 								</td>
-									<td>
-								{{ client.clientname }}
+								<td>
+									{{ client.clientname }}
 								</td>
-									<td>
-										<div class="options"> <img src="/img/edit1.png" alt="">
-										<img src="/img/delete1.png" alt="">
+								<td>
+									<div class="options">
+
+										<a href="{{ path('clients-edit-client', {'id':client.id}) }}"><img src="/img/eye.png" alt="" class="eye-pad"></a>
+										<a href="{{ path('clients-delete-client', {'id':client.id}) }}"><img src="/img/delete1.png" alt=""></a>
 									</div>
 								</td>
 							</tr>
@@ -62,9 +65,9 @@
 					{{ form_start(form) }}
 					Add Image:
 					{{ form_widget(form.avatarPath , { 'attr': {'class': 'new-client-input'}}) }}
-															Client Name:
+																																			Client Name:
 					{{ form_widget(form.clientName , { 'attr': {'class': 'new-client-input'}}) }}
-															Client Email:
+																																			Client Email:
 					{{ form_widget(form.clientEmail , { 'attr': {'class': 'new-client-input'}}) }}
 					<div class="btn-options">
 						<button type="button" class="new-cancel-btn">Cancel</button>

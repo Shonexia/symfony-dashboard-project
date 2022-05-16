@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('css/myprofile.css') }}">
+		<title></title>
+	</head>
+	<body>
+		{% include ('/navigation/navigation.html.twig') %}
+		<section
+			class="profile-section">
+			<!-- PAGE CONTAINER -->
+			<div
+				class="page-container overflow-auto-x">
+				<!-- PROFILE CONTAINER -->
+				<div class="profile-view">
+					<div class="img-title">
+						<a class="edit-user-btn"><img src="/img/edit1.png" alt="" class="edit-right"></a>
+
+						<div class="user-img">
+							<img src="/img/profile-img.png" alt="" class="profile-img">
+						</div>
+						<h1>{{ client.clientName }}</h1>
+					</div>
+					<div class="profile-items">
+						<span>
+							<strong>Client Name:</strong>
+							{{ client.clientName }}</span>
+						<span>
+							<strong>Client Email:</strong>
+							{{ client.clientEmail }}</span>
+						<span>
+							<strong>Avatar:</strong>
+							{{ client.avatarPath }}</span>
+					</div>
+				</div>
+
+				{# {{ form_start(editform) }}
+				Add Image:
+				{{ form_widget(editform.avatarPath) }}
+				Client Name:
+				{{ form_widget(editform.clientName) }}
+				Client Email:
+				{{ form_widget(editform.clientEmail) }}
+				<div class="btn-options">
+				<button type="button" class="new-cancel-btn">Cancel</button>
+				{{ form_widget(editform.save) }}
+				</div>
+				{{ form_end(editform) }} #}
+
+				{{ form(editform) }}
+				</div>
+			</body>
+		</body>
+	</body>
+</html>
