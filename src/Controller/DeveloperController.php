@@ -30,4 +30,16 @@ class DeveloperController extends AbstractController
     {
         return $this->render('developer/developer-profile.html.twig');
     }
+
+    // DELETE DEVELOPER
+    #[Route('/delete-developer/{id}', name: 'delete-developer')]
+    public function deleteClient($id, UserRepository $ur)
+    {
+        $developer = $ur->find($id);
+        if ($developer == null)
+            throw $this->createNotFoundException('Developer not found!');
+        $ur->remove($developer, true);
+
+        return $this->redirectToRoute('developers-all-developers');
+    }
 }
