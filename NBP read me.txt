@@ -1,0 +1,18 @@
+username i password 
+admin
+user i pass
+nele128@yahoo.com
+nele128
+
+navi1962@gmail.com
+navi1962
+
+developers
+user i pass
+marko88@yahoo.com
+marko88
+
+bojan91@gmail.com
+bojan91
+
+sql baza i .env fajlovi su u zipovanom db folderu
